@@ -19,6 +19,8 @@ const Slider = () => {
   useEffect(() => {
     nextCard();
   });
+
+  
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
@@ -38,6 +40,7 @@ const Slider = () => {
               </div>
             </div>
           </div>
+          {index === idx && (
           <div className="SlideCard__paginationContainer">
             <div className="SlideCard__pagination">
               {byDateDesc.map((_, radioIdx) => (
@@ -50,6 +53,7 @@ const Slider = () => {
               ))}
             </div>
           </div>
+          )}
         </>
       ))}
     </div>
