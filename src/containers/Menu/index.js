@@ -9,7 +9,7 @@ const Menu = () => (
     <Logo />
     <ul>
       <li>
-        <a href="#nos-services"onClick={() => (window.document.location.hash = "#service")}>Nos services</a>
+        <a href="#nos-services" onClick={() => (window.document.location.hash = "#service")}>Nos services</a>
       </li>
       <li>
         <a href="#nos-realisations" onClick={() => (window.document.location.hash = "#event")}>Nos réalisations</a>
