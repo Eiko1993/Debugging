@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useData } from "../../contexts/DataContext";
-/* import { getMonth } from "../../helpers/Date"; */
+import { getMonth } from "../../helpers/Date";
+
 import "./style.scss";
 
 const Slider = () => {
@@ -23,9 +24,8 @@ const Slider = () => {
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
-        <>
+        <div key={event.title}>
           <div
-            key={event.title}
             className={`SlideCard SlideCard--${
               index === idx ? "display" : "hide"
             }`}
@@ -35,7 +35,7 @@ const Slider = () => {
               <div className="SlideCard__description">
                 <h3>{event.title}</h3>
                 <p>{event.description}</p>
-                <div>{new Date(event.date).toLocaleDateString('fr-FR', { month: 'long' })}</div>
+                <div>{getMonth(new Date(event.date))}</div>
               </div>
             </div>
           </div>
@@ -44,7 +44,7 @@ const Slider = () => {
             <div className="SlideCard__pagination">
               {byDateDesc.map((_, radioIdx) => (
                 <input
-                  key={`${event.id}`}
+                  key={_.date}
                   type="radio"
                   name="radio-button"
                   checked={idx === radioIdx}
@@ -54,7 +54,7 @@ const Slider = () => {
             </div>
           </div>
           )}
-        </>
+        </div>
       ))}
     </div>
   );
