@@ -16,6 +16,7 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder }) => {
           type="text"
           name={name}
           placeholder={placeholder}
+          
           data-testid="field-testid"
         />
       );
