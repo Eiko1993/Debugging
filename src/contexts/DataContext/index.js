@@ -25,9 +25,8 @@ export const DataProvider = ({ children }) => {
       const fetchedData = await api.loadData();
       setData(fetchedData);
 
-      // Assuming the events are sorted by date in ascending order in the JSON
       if (fetchedData?.events?.length > 0) {
-        // Sort events by date to get the latest one
+        // Trie les évènements par Date
         const sortedEvents = fetchedData.events.sort((a, b) => new Date(b.date) - new Date(a.date));
         setLast(sortedEvents[0]); // Récupère le dernier évènement
       }
@@ -47,7 +46,7 @@ export const DataProvider = ({ children }) => {
       value={{
         data,
         error,
-        last, // Provide `last` event in the context
+        last, 
       }}
     >
       {children}
