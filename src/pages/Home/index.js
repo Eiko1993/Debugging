@@ -12,6 +12,9 @@ import Form from "../../containers/Form";
 import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
+
+
+
 const Page = () => {
   const {last} = useData()
   return <>
@@ -121,7 +124,7 @@ const Page = () => {
           title={last?.title || 'Boom'}
           date={new Date(last?.date)}
           small
-          label="boom"
+          label={last?.type || "boom"}
         />
       </div>
       <div className="col contact">
